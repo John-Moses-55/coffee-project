@@ -8,13 +8,14 @@ td, th {
     padding: 5px 10px;
 }
 .backCover{
-    background-size: 100%;
+    max-width: 100%;
     background-repeat: no-repeat;
     object-fit: cover;
-    height: 25em;
-    margin-top: .5em;
+    height: 26em;
+    /*margin-top: .5em;*/
+    padding-top: 12.5em;
     border-bottom: black solid 5px;
-    display: flex;
+    /*display: flex;*/
     background-image: url("https://images.freeimages.com/images/large-previews/da4/coffee-1-1325907.jpg");
 }
 .card {
@@ -22,12 +23,29 @@ td, th {
 }
 .fa-facebook{
     color: black;
+    margin-right: 5px;
 }
 .fa-instagram{
     color: black;
+    margin-right: 5px;
+
 }
 .fa-twitter{
     color: black;
+    margin-right: 5px;
+
 }
+.fa-yelp{
+    color: black;
+    margin-right: 5px;
 
+}
+.checkout  {
+    float: left;
+}
+h2 {
+    text-align: center;
+    font-style: italic;
+    letter-spacing: 2px;
 
+}
