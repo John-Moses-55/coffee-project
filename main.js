@@ -36,10 +36,10 @@ function fillCoffeeArray()
     {
         coffees = JSON.parse(localStorage.getItem("coffeeArray"));
     }
-    writeCoffeeHtmlToPage(coffees);
+    coffeeToPage(coffees);
 }
 
-function writeCoffeeHtmlToPage(coffeeArray)
+function coffeeToPage(coffeeArray)
 {
     tbody.innerHTML = renderCoffees(coffeeArray.sort((a,b) => (a.name > b.name) ? -1 : 1));
 }
@@ -85,7 +85,6 @@ function renderCoffee(coffee) {
     html += '<div class="td coffeeRoast text-muttext-muteded">' + coffee.roast + '</div>';
     html += '</div>';
     html += '</div>';
-
     return html;
 }
 
@@ -95,8 +94,6 @@ function renderCoffees(coffees) {
         //for(var i = 0; i <= coffees.length - 1; i++) {
         html += renderCoffee(coffees[i]);
     }
-
-    //alert(html);
     return html;
 }
 
@@ -108,12 +105,11 @@ function updateCoffees(e) {
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
-            // }
         } else if (selectedRoast === "any") {
             filteredCoffees.push(coffee);
         }
     });
-    writeCoffeeHtmlToPage(filteredCoffees);
+    coffeeToPage(filteredCoffees);
 }
 
 function updateCoffeesText(e) {
@@ -131,7 +127,7 @@ function updateCoffeesText(e) {
             filteredCoffees.push(coffee);
         }
     });
-    writeCoffeeHtmlToPage(filteredCoffees);
+    coffeeToPage(filteredCoffees);
 }
 
 
