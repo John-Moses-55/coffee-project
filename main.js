@@ -1,20 +1,8 @@
 "use strict"
-//localstorage cannot hold an array. it can only hold a string.
-//so to use localstorage you need to turn your array into a string anytime you want to store it
-//which means you also need to turn the stored string into an array anytime you want to use it
-
-
-// from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
-
-//make a blank array to hold our list of coffee objects
 var coffees = [];
-
 function fillCoffeeArray()
 {
-    //see if there is a coffee array stored in local storage
     if (localStorage.getItem("coffeeArray") === null) {
-        //alert('Filling manually');
-        //if there is NOT a coffeeArray saved in localStorage, fill the array with the default data
         coffees = [
             {id: 1, name: 'Light City', roast: 'light'},
             {id: 2, name: 'Half City', roast: 'light'},
@@ -38,65 +26,42 @@ function fillCoffeeArray()
     }
     coffeeToPage(coffees);
 }
-
 function coffeeToPage(coffeeArray)
 {
     tbody.innerHTML = renderCoffees(coffeeArray.sort((a,b) => (a.name > b.name) ? -1 : 1));
 }
-
 function saveCoffeeArray()
 {
-    //Turn the coffee array into a string because localStorage cannot hold an array (that is what JSON.stringify is for)
-    //save to local storage (setItem is the save command for local storage)
-    //make a variable in localStorage named coffeeArray and put the current coffee array in it,
-    //but since localStorage cannot hold and array and can only hold strings, turn the array into
-    // a JSON string first by using the JSON.stringify command on it before storing it.
     localStorage.setItem("coffeeArray",JSON.stringify(coffees));
 }
-
 function addNewCoffee()
 {
-    //e.preventDefault(); // don't submit the form, we just want to update the data
-    //add new coffee to coffee array and call saveCoffeeArray
-    //
     var newCoffeeName = addCoffee.value;
     var selectedRoast = roastSelectionNew.value;
-    //Make a new object for the coffee and give it field names that match what we used for coffees originally
     var obj = {};
-    //The id for the coffee has to be added and since the ids start at 1 and not zero we need to add one so we do not overlap the last id in the list
     obj['id'] = coffees.length+1;
-    //add the coffee name
     obj['name'] = newCoffeeName;
-    //add the selected roast
     obj['roast'] = selectedRoast;
-    //push the new object onto the end of the coffees array
     coffees.push(obj);
-    //The coffees array works fine now but the new addition will be lost if the page is reloaded so we need to
-    //save the coffee array again to local storage since we added data to the array that is not currently saved in local storage
     saveCoffeeArray();
 }
 function renderCoffee(coffee) {
     var html = '<div class="card tr coffee">';
     html += '<div class="card-body coffeeCard">';
-    // html += '<div class="td">' + coffee.id + '</div>';
     html += '<div class="td coffeeName " style="max-width:150px;">' + coffee.name + '</div>';
     html += '<div class="td coffeeRoast text-muttext-muteded">' + coffee.roast + '</div>';
     html += '</div>';
     html += '</div>';
     return html;
 }
-
 function renderCoffees(coffees) {
     var html = '';
     for(var i = coffees.length - 1; i >= 0; i--) {
-        //for(var i = 0; i <= coffees.length - 1; i++) {
         html += renderCoffee(coffees[i]);
     }
     return html;
 }
-
 function updateCoffees(e) {
-    // e.preventDefault(); // don't submit the form, we just want to update the data
     var textSearch = nameSelection.value.toLowerCase();
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
@@ -110,15 +75,10 @@ function updateCoffees(e) {
     });
     coffeeToPage(filteredCoffees);
 }
-
 function updateCoffeesText(e) {
-    //alert('i was called');
-    //e.preventDefault(); // don't submit the form, we just want to update the data
-    // var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
     var textSearch = nameSelection.value.toLowerCase();
     var selectedRoast = roastSelection.value;
-    //alert('sroast: ' + selectedRoast);
     console.log(textSearch);
     coffees.forEach(function(coffee) {
         if (coffee.name.toLowerCase().includes(textSearch) && (coffee.roast.toLowerCase() === selectedRoast || selectedRoast === 'any')) {
@@ -127,7 +87,6 @@ function updateCoffeesText(e) {
     });
     coffeeToPage(filteredCoffees);
 }
-
 var tbody = document.querySelector('#coffees');
 tbody.innerHTML = renderCoffees(coffees);
 var submitButton = document.querySelector('#submit');

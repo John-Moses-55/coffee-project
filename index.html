@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div style="background-color: white">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
             aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-<!--        <a class="navbar-brand" href="#">Codeup Coffee Club</a>-->
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item nav1 active">
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
@@ -29,19 +29,21 @@
                 <a class="nav-link" href="#">Menu</a>
             </li>
             <li class="nav-item nav1">
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Zip code" aria-label="Search">
-                <button type="button" class="btn btn-md btn-light btn-outline-secondary">Search stores near you</button>
-            </form>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Zip code" aria-label="Search">
+                    <button type="button" class="btn btn-md btn-light btn-outline-secondary">Search stores near you
+                    </button>
+                </form>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto nav1" style="padding-bottom: 5px">
             <li style="float: left" class="nav-item">
-                <button type="button" class="btn btn-md btn-dark btn-secondary">Order Now!</button>
+                <button type="button" class="btn btn-md btn-dark btn-secondary">Subscribe!</button>
             </li>
         </ul>
     </div>
 </nav>
+</div>
 <div class="jumbotron backCover">
     <div class=" jumboText">
         <h1 class="display-3" style="font-weight: bold">Codeup <br>Coffee <br>Club</h1>
@@ -49,15 +51,12 @@
     </div>
 </div>
 <div>
-    <h2 class="display-5" style="font-weight: bold">
-        Menu
-    </h2>
+    <h2 class="display-5" style="font-weight: bold; padding-bottom: 5px">Menu</h2>
 </div>
 <hr>
 <div class="row row-cols-1 row-cols-md-2 mx-5">
     <div class="col mb-4">
         <div class="card">
-<!--            <div class="cardImg" id="cardImgList"></div>-->
             <div class="card-body">
                 <h4 class="card-title" style="text-align: center">Flavor and Roast</h4>
                 <p class="card-text">
@@ -70,9 +69,8 @@
     </div>
     <div class="col">
         <div class="card" style="height:300px;">
-<!--            <div class="cardImg " id="cardImgSearch"></div>-->
             <div class="card-body">
-                <h4 class="card-title" style="text-align: center">Search for your favorite coffee</h4>
+                <h4 class="card-title" style="text-align: center">Search coffee here</h4>
                 <p class="card-text">
                     <label for="roast-selection"></label>
                 <form style="margin-bottom:130px;" class="coffeeForm " id="findCoffee">
@@ -101,21 +99,17 @@
         </div>
         <br>
         <div class="card" style="height:300px;">
-<!--            <div class="cardImg" id="cardImgNew"></div>-->
             <div class="card-body">
                 <h4 style="text-align: center; padding-bottom: 25px" class="card-title">Add coffee here</h4>
                 <p class="card-text">
-
                 <form class="coffeeForm" id="newCoffee">
                     <div class="mb-3">
                         <label for="submitType">Add a new flavor</label>
-                        <input type="text" class="form-control" id="addCoffee"  placeholder="Coffee Name"
+                        <input type="text" class="form-control" id="addCoffee" placeholder="Coffee Name"
                                title="Add new Coffee">
                     </div>
                     <div class="mb-3">
-<!--                        mb-3 margin-->
                         <div class="input-group">
-<!--                            input group and prepend bootstrap-->
                             <div class="input-group-prepend">
                                 <label class="input-group-text" for="roastSelectionNew">Type of Roast</label>
                             </div>
@@ -126,43 +120,49 @@
                             </select>
                         </div>
                     </div>
-                    <button id="submitCoffee" class="btn btn-secondary btn-block" type="submit">Add Coffee to List</button>
+                    <button id="submitCoffee" class="btn btn-secondary btn-block" type="submit">Add Coffee to List
+                    </button>
                 </form>
                 </p>
             </div>
         </div>
         <br>
         <div class="card" style="height:300px;">
-            <!--            <div class="cardImg" id="cardImgNew"></div>-->
             <div class="card-body">
                 <h4 style="text-align: center; padding-bottom: 25px" class="card-title">Choose a size</h4>
                 <p class="card-text">
                 <div class="checkout form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
+                           value="option2">
                     <label class="form-check-label" for="exampleRadios2">
                         Tall $3.25
                     </label>
                 </div>
                 <div class="checkout form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
+                           value="option2">
                     <label class="form-check-label" for="exampleRadios2">
                         Grande $3.99
                     </label>
                 </div>
                 <div class="checkout form-check" style="padding-bottom: 5px">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
+                           value="option2">
                     <label class="form-check-label" for="exampleRadios2">
                         Venti $4.50
                     </label>
                 </div>
                 <div class="checkout checkBTN form-check">
-                    <button style="margin-left: 5px" class="btn btn-secondary checkout btn-block" type="submit">Checkout</button>                </form>
+                    <button style="margin-left: 5px" class="btn btn-secondary checkout btn-block" type="submit">
+                        Checkout
+                    </button>
+                    </form>
                 </div>
                 </p>
             </div>
         </div>
-        </div>
     </div>
+</div>
 </div>
 <div class="container">
     <div class="row">
@@ -182,8 +182,6 @@
 </div>
 </div>
 
-<!--    </div>-->
-<!--    <img src="img/clouds.gif" class="movingClouds">-->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
