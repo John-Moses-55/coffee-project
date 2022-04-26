@@ -75,8 +75,6 @@ function addNewCoffee()
     //save the coffee array again to local storage since we added data to the array that is not currently saved in local storage
     saveCoffeeArray();
 }
-
-
 function renderCoffee(coffee) {
     var html = '<div class="card tr coffee">';
     html += '<div class="card-body coffeeCard">';
@@ -98,10 +96,11 @@ function renderCoffees(coffees) {
 }
 
 function updateCoffees(e) {
-    //e.preventDefault(); // don't submit the form, we just want to update the data
+    // e.preventDefault(); // don't submit the form, we just want to update the data
+    var textSearch = nameSelection.value.toLowerCase();
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
-
+    console.log(textSearch);
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
@@ -121,7 +120,6 @@ function updateCoffeesText(e) {
     var selectedRoast = roastSelection.value;
     //alert('sroast: ' + selectedRoast);
     console.log(textSearch);
-
     coffees.forEach(function(coffee) {
         if (coffee.name.toLowerCase().includes(textSearch) && (coffee.roast.toLowerCase() === selectedRoast || selectedRoast === 'any')) {
             filteredCoffees.push(coffee);
@@ -130,17 +128,13 @@ function updateCoffeesText(e) {
     coffeeToPage(filteredCoffees);
 }
 
-
-
 var tbody = document.querySelector('#coffees');
+tbody.innerHTML = renderCoffees(coffees);
 var submitButton = document.querySelector('#submit');
 var submitButtonText = document.querySelector('#submitText');
-// var typeButton = document.querySelector('#submitType');
 var roastSelection = document.querySelector('#roast-selection');
 var nameSelection = document.querySelector("#submitType")
-
-tbody.innerHTML = renderCoffees(coffees);
-// var submitCoffee = document.querySelector("#submitCoffee")
+var submitCoffee = document.querySelector("#submitCoffee")
 submitCoffee.addEventListener('click', addNewCoffee);
 
 

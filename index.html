@@ -17,23 +17,27 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand" href="#">Codeup Coffee Club</a>
+<!--        <a class="navbar-brand" href="#">Codeup Coffee Club</a>-->
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-                <a class="order nav-link" href="#">Order online <span class="sr-only">(current)</span></a>
+            <li class="nav-item nav1 active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item nav1">
+                <a class="nav-link" href="#">About Us <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item nav1">
                 <a class="nav-link" href="#">Menu</a>
             </li>
+            <li class="nav-item nav1">
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Zip code" aria-label="Search">
-                <button type="button" class="btn btn-light">Search stores near you!</button>
+                <button type="button" class="btn btn-md btn-light btn-outline-secondary">Search stores near you</button>
             </form>
             </li>
         </ul>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Subscribe</a>
+        <ul class="navbar-nav ml-auto nav1" style="padding-bottom: 5px">
+            <li style="float: left" class="nav-item">
+                <button type="button" class="btn btn-md btn-dark btn-secondary">Order Now!</button>
             </li>
         </ul>
     </div>
@@ -81,7 +85,7 @@
                     <div class="mb-3">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <label class="input-group-text" for="roast-selection">Roast</label>
+                                <label class="input-group-text" for="roast-selection">Type of Roast</label>
                             </div>
                             <select class="custom-select " id="roast-selection" onchange="updateCoffeesText()">
                                 <option value="any">Any</option>
@@ -99,12 +103,12 @@
         <div class="card" style="height:300px;">
 <!--            <div class="cardImg" id="cardImgNew"></div>-->
             <div class="card-body">
-                <h4 style="text-align: center" class="card-title">Add coffee here</h4>
+                <h4 style="text-align: center; padding-bottom: 25px" class="card-title">Add coffee here</h4>
                 <p class="card-text">
 
                 <form class="coffeeForm" id="newCoffee">
                     <div class="mb-3">
-<!--                        <label for="submitType">Press add coffee to list when done.</label>-->
+                        <label for="submitType">Add a new flavor</label>
                         <input type="text" class="form-control" id="addCoffee"  placeholder="Coffee Name"
                                title="Add new Coffee">
                     </div>
@@ -113,7 +117,7 @@
                         <div class="input-group">
 <!--                            input group and prepend bootstrap-->
                             <div class="input-group-prepend">
-                                <label class="input-group-text" for="roastSelectionNew">Choose a Roast</label>
+                                <label class="input-group-text" for="roastSelectionNew">Type of Roast</label>
                             </div>
                             <select class="custom-select" id="roastSelectionNew">
                                 <option value="light">Light</option>
@@ -122,42 +126,41 @@
                             </select>
                         </div>
                     </div>
-                    <button id="submitCoffee" class="btn btn-secondary" type="submit">Add Coffee to List</button>
+                    <button id="submitCoffee" class="btn btn-secondary btn-block" type="submit">Add Coffee to List</button>
                 </form>
                 </p>
             </div>
         </div>
         <br>
-        <div class="card" style="height:300px">
-            <!--            <img src="img/cup-size.jpeg" class="card-img-top" alt="...">-->
-<!--            <div class="cardImg" id="cardImgSize"></div>-->
-            <div class="card-body mb-3">
-                <div style="display:table-cell;text-align:center;">
-                <!--              <img src="img/cup-size.jpeg" style="max-width:400px;"/>-->
-                    <h4 class="card-title" style="text-align: center">Choose a size</h4>
-                    <div style="width:400px;margin-bottom:30px;height:30px;">
-                    <div class="form-check form-check-inline" style="margin:10px 5px;">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                               value="option1"
-                               style="margin-bottom: 0px">
-                        <label class="form-check-label" for="inlineRadio1">Tall $3.25</label>
-                    </div>
-                    <div class="form-check form-check-inline" >
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                               value="option2"
-                               style="margin-left: 10px">
-                        <label class="form-check-label" for="inlineRadio2">Grande $3.99</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-                               value="option3"
-                               style="margin-left: 0px">
-                        <label class="form-check-label" for="inlineRadio3">Venti $4.50</label>
-                    </div>
-                <button style="margin-left: 5px" class="btn btn-secondary checkout" type="submit">Checkout</button>
+        <div class="card" style="height:300px;">
+            <!--            <div class="cardImg" id="cardImgNew"></div>-->
+            <div class="card-body">
+                <h4 style="text-align: center; padding-bottom: 25px" class="card-title">Choose a size</h4>
+                <p class="card-text">
+                <div class="checkout form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                    <label class="form-check-label" for="exampleRadios2">
+                        Tall $3.25
+                    </label>
                 </div>
-
-          </div>
+                <div class="checkout form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                    <label class="form-check-label" for="exampleRadios2">
+                        Grande $3.99
+                    </label>
+                </div>
+                <div class="checkout form-check" style="padding-bottom: 5px">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                    <label class="form-check-label" for="exampleRadios2">
+                        Venti $4.50
+                    </label>
+                </div>
+                <div class="checkout checkBTN form-check">
+                    <button style="margin-left: 5px" class="btn btn-secondary checkout btn-block" type="submit">Checkout</button>                </form>
+                </div>
+                </p>
+            </div>
+        </div>
         </div>
     </div>
 </div>
@@ -171,11 +174,14 @@
                     <a href="https://facebook.com"><i class="fab fa-facebook"></i></a>
                     <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
                     <a href="https://yelp.com"><i class="fab fa-yelp"></i></a>
+                    <a href="https://linked-in.com"><i class="fab fa-linkedin"></i></a>
                 </div>
             </footer>
         </div>
     </div>
 </div>
+</div>
+
 <!--    </div>-->
 <!--    <img src="img/clouds.gif" class="movingClouds">-->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

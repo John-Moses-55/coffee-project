@@ -15,6 +15,7 @@ td, th {
     /*margin-top: .5em;*/
     padding-top: 8em;
     border-bottom: black solid 5px;
+    /*border-top: black solid 5px;*/
     /*display: flex;*/
     background-image: url("https://images.freeimages.com/images/large-previews/da4/coffee-1-1325907.jpg");
 }
@@ -28,24 +29,31 @@ td, th {
 .fa-instagram{
     color: black;
     margin-right: 5px;
-
 }
 .fa-twitter{
     color: black;
     margin-right: 5px;
-
 }
 .fa-yelp{
     color: black;
     margin-right: 5px;
-
+}
+.fa-linkedin{
+    color: black;
+    margin-right: 5px;
 }
 .checkout  {
-    float: left;
+    margin-bottom: 10px;
+}
+.checkBTN {
+    margin-left: -24px;
 }
 h2 {
     text-align: center;
     font-style: italic;
     letter-spacing: 2px;
-
+}
+.nav1 {
+    padding-right: 15px;
+    padding-left: 15px;
 }
